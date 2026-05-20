@@ -139,7 +139,7 @@
 #card2-section .c2-details dd.featured {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 3.6mm;
+  font-size: 3.8mm;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -203,7 +203,7 @@
   position: absolute;
   left: 0; right: 0; top: 0;
   text-align: center;
-  font-family: var(--font-display);
+  font-family: 'Playfair Display', serif;
   font-style: normal;
   font-weight: 500;
   font-size: 7mm;
@@ -225,7 +225,7 @@
 }
 
 #card2-section .stack-c1 .s-date span {
-  font-family: var(--font-display);
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
   font-size: 16mm;
   line-height: 0.95;
