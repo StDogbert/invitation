@@ -76,36 +76,40 @@
 #card4-section .card-frame.show-marks .cut-line   { display: block; }
 #card4-section .card-frame.show-marks .bleed-line { display: block; }
 
-/* ── Curved «С любовью,» inside card-svg via textPath ─────── */
-#card4-section .card-svg .l-slove {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 6mm;
-  fill: var(--card-ink);
-  letter-spacing: 0.04em;
-}
-
-/* ── Initials overlay ─────────────────────────────────────── */
+/* ── Text overlay ─────────────────────────────────────────── */
 #card4-section .card-text {
   position: absolute;
   left: 0; right: 0;
-  top: 62%;
-  transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-30%);
   text-align: center;
   color: var(--card-ink);
   z-index: 4;
+  line-height: 0.9;
 }
 
-#card4-section .card-text .l-initials {
+#card4-section .card-text .l-zhdem {
   display: block;
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 500;
-  font-size: 20mm;
-  letter-spacing: 0.02em;
+  font-size: 6mm;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+}
+
+#card4-section .card-text .l-vas {
+  display: block;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10mm;
   line-height: 1;
-  padding-left: 0.02em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+  margin-top: 2mm;
 }
 
 /* ── Full stack mockup (all 4 cards) ─────────────────────── */
@@ -359,24 +363,26 @@
   line-height: 0.9;
 }
 
-#card4-section .stack-c4 .c4-text .l-slove {
-  display: block;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 4mm;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  margin-bottom: 3mm;
-}
-
-#card4-section .stack-c4 .c4-text .l-initials {
+#card4-section .stack-c4 .c4-text .l-zhdem {
   display: block;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 12mm;
+  font-size: 4.5mm;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+}
+
+#card4-section .stack-c4 .c4-text .l-vas {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 7mm;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+  margin-top: 1.5mm;
 }
 
 #card4-section .paperclip {
