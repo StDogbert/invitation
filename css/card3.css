@@ -33,20 +33,7 @@
   flex-direction: column;
 }
 
-/* ── Heading ──────────────────────────────────────────────── */
-#card3-section .c3-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-#card3-section .c3-head .line { display: block; }
+/* ── Heading — styles live in styles.css (.c3-head) ──────── */
 
 /* ── Centered content group ───────────────────────────────── */
 #card3-section .c3-content {
@@ -220,19 +207,7 @@
 
 #card3-section .stack-c2 .inner { position: absolute; inset: var(--safe); }
 
-#card3-section .stack-c2 .c2-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1.05;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-#card3-section .stack-c2 .c2-head span { display: block; }
+/* .c2-head styles come from styles.css — no override needed */
 
 /* Card 03 on top */
 #card3-section .stack-c3 {

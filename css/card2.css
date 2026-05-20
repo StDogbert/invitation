@@ -34,20 +34,7 @@
   flex-direction: column;
 }
 
-/* ── Heading ──────────────────────────────────────────────── */
-#card2-section .c2-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-#card2-section .c2-head .line { display: block; }
+/* ── Heading — styles live in styles.css (.c2-head) ──────── */
 
 /* ── Centered content group ───────────────────────────────── */
 #card2-section .c2-content {
