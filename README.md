@@ -20,10 +20,11 @@ Everything is in **`src/data.js`** — text, specs, colors, fonts, notes.
 ## Export PDFs for print
 
 ```bash
-npm install       # once (requires Node.js)
-npm run export    # server must be running on port 8743
+brew install ghostscript  # once — enables CMYK output (recommended for printing)
+npm install               # once (requires Node.js)
+npm run export            # server must be running on port 8743
 ```
 
 Generates in `pdfs/`:
-- `card-01.pdf` … `card-04.pdf` — artwork at with-bleed dimensions
+- `card-01.pdf` … `card-04.pdf` — artwork at with-bleed dimensions, CMYK if Ghostscript is installed
 - `card-01-spec.pdf` … `card-04-spec.pdf` — technical spec sheets (A4 landscape)
