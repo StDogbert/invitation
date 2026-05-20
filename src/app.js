@@ -295,8 +295,15 @@
         <path class="cut-line"  d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
         <path class="bleed-line" d="M -3 108 L -3 40 A 43 43 0 0 1 83 40 L 83 108 Z"></path>
       </svg>
+      <svg class="card-text-svg" viewBox="0 0 80 105" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <path id="c4-arch-path" d="M 8 40 A 32 32 0 0 1 72 40"/>
+        </defs>
+        <text class="l-slove" text-anchor="middle">
+          <textPath href="#c4-arch-path" startOffset="50%">${card.textLine1}</textPath>
+        </text>
+      </svg>
       <p class="card-text">
-        <span class="l-slove">${card.textLine1}</span>
         <span class="l-initials">${card.textLine2}</span>
       </p>`;
 
