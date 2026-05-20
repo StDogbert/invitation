@@ -136,15 +136,7 @@
   flex-direction: column;
 }
 
-#card4-section .stack-c1 .s-date span {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 16mm;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-#card4-section .stack-c1 .s-date span + span { margin-top: 2mm; }
+/* .date-num styles come from styles.css */
 
 /* Card 02 */
 #card4-section .stack-c2 {

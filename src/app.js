@@ -137,7 +137,7 @@
     const coupleNames = `<span class="name-1">${d.couple.name1}</span>
       <span class="amp">&amp;</span>
       <span class="name-2">${d.couple.name2}</span>`;
-    const dateNums = d.couple.dateShort.map(n => `<span class="num">${n}</span>`).join('\n');
+    const dateNums = d.couple.dateShort.map(n => `<span class="date-num">${[...n].map(c => `<span class="date-d">${c}</span>`).join('')}</span>`).join('\n');
 
     const cardHTML = `
       <div class="card-clip">
@@ -192,7 +192,7 @@
         </div>
       </div>`;
 
-    const dateNums = d.couple.dateShort.map(n => `<span>${n}</span>`).join('');
+    const dateNums = d.couple.dateShort.map(n => `<span class="date-num">${[...n].map(c => `<span class="date-d">${c}</span>`).join('')}</span>`).join('');
     const stackHTML = `
       <div class="stack-stage">
         <div class="stack">
@@ -245,7 +245,7 @@
         </div>
       </div>`;
 
-    const dateNums = d.couple.dateShort.map(n => `<span>${n}</span>`).join('');
+    const dateNums = d.couple.dateShort.map(n => `<span class="date-num">${[...n].map(c => `<span class="date-d">${c}</span>`).join('')}</span>`).join('');
     const stackHTML = `
       <div class="stack-stage">
         <div class="stack">
@@ -310,7 +310,7 @@
         <span class="l-vas">${card.textLine2}</span>
       </p>`;
 
-    const dateNums = d.couple.dateShort.map(n => `<span>${n}</span>`).join('');
+    const dateNums = d.couple.dateShort.map(n => `<span class="date-num">${[...n].map(c => `<span class="date-d">${c}</span>`).join('')}</span>`).join('');
     const stackHTML = `
       <div class="stack-stage">
         <div class="stack">

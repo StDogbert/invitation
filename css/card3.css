@@ -169,15 +169,7 @@
   flex-direction: column;
 }
 
-#card3-section .stack-c1 .s-date span {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: 16mm;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-#card3-section .stack-c1 .s-date span + span { margin-top: 2mm; }
+/* .date-num styles come from styles.css */
 
 /* Card 02 layer */
 #card3-section .stack-c2 {

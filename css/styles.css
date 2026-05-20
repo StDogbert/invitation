@@ -472,6 +472,23 @@ body {
   margin-top: 2mm;
 }
 
+.date-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 16mm;
+  line-height: 0.95;
+  font-variant-numeric: lining-nums;
+  display: flex;
+}
+
+.date-num + .date-num { margin-top: 2mm; }
+
+.date-d {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   body { background: #fff; padding: 0; }
