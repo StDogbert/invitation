@@ -123,9 +123,9 @@
 #card3-section .c3-details dd.featured {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 7mm;
-  letter-spacing: 0.15em;
-  padding-left: 0.15em;
+  font-size: 5.5mm;
+  letter-spacing: 0.12em;
+  padding-left: 0.12em;
   white-space: nowrap;
   line-height: 1;
 }
