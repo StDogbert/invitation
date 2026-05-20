@@ -1,0 +1,175 @@
+/* ============================================================
+   card1.css — Card 01 specific styles (110×155mm base card)
+   bg: #F7D4D8 (baby pink)  ink: #C42B34 (tomato red)
+   ============================================================ */
+
+#card1-section {
+  --card-bg:     #F7D4D8;
+  --card-ink:    #C42B34;
+  --card-radius: 6mm;
+  --trim-w:  110mm;
+  --trim-h:  155mm;
+  --bleed:   3mm;
+  --safe:    5mm;
+  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
+}
+
+/* Frame dimensions */
+#card1-section .card-frame {
+  width:  var(--full-w);
+  height: var(--full-h);
+}
+
+/* ── Date column — bottom-left, vertically centred ──────── */
+#card1-section .date-col {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.95;
+}
+
+#card1-section .date-col .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 16mm;
+  letter-spacing: -0.02em;
+  font-feature-settings: "lnum";
+}
+
+#card1-section .date-col .num + .num {
+  margin-top: 2mm;
+}
+
+/* ── Invitation body text ─────────────────────────────────── */
+#card1-section .invite-text {
+  position: absolute;
+  right: 0;
+  bottom: 28mm;
+  width: 58mm;
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 4.1mm;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+}
+
+/* ── Names heading ────────────────────────────────────────── */
+#card1-section .names {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0;
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 7mm;
+  line-height: 1;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+#card1-section .names .name-1,
+#card1-section .names .name-2,
+#card1-section .names .amp {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  opacity: 1;
+}
+
+#card1-section .names .amp {
+  font-weight: 400;
+  opacity: .85;
+  margin: 0 0.6mm;
+}
+
+/* ── Decorative arch (faint) ──────────────────────────────── */
+#card1-section .arch {
+  position: absolute;
+  bottom: -40mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130mm;
+  height: 130mm;
+  border-radius: 50%;
+  border: 1px solid rgba(252, 138, 45, .18);
+  pointer-events: none;
+}
+
+/* ── Stack mockup ─────────────────────────────────────────── */
+#card1-section .stack-stage {
+  width: var(--full-w);
+  position: relative;
+}
+
+#card1-section .stack {
+  position: relative;
+  width:  calc(var(--trim-w) + 30mm);
+  height: calc(var(--trim-h) + 30mm);
+  margin: 0 auto;
+}
+
+#card1-section .stack .ghost {
+  position: absolute;
+  box-shadow: 0 1mm 3mm rgba(0, 0, 0, .18);
+}
+
+#card1-section .stack .g2 {
+  width:  calc(var(--trim-w) - 12mm);
+  height: calc(var(--trim-h) - 50mm);
+  background: var(--orange);
+  left: 14mm; top: 60mm;
+  transform: rotate(1deg);
+  border-radius: var(--card-radius);
+}
+
+#card1-section .stack .g3 {
+  width:  calc(var(--trim-w) - 30mm);
+  height: calc(var(--trim-h) - 80mm);
+  background: var(--blush);
+  left: 28mm; top: 90mm;
+  transform: rotate(-2deg);
+  border-radius: var(--card-radius);
+}
+
+#card1-section .stack .g4 {
+  width:  calc(var(--trim-w) - 50mm);
+  height: calc(var(--trim-h) - 110mm);
+  background: var(--tomato);
+  left: 46mm; top: 120mm;
+  transform: rotate(3deg);
+  border-radius: var(--card-radius);
+}
+
+#card1-section .stack-mini-card {
+  position: absolute;
+  inset: 6mm 0 0 6mm;
+  width:  var(--trim-w);
+  height: var(--trim-h);
+  background: var(--card-bg);
+  color:      var(--card-ink);
+  transform: rotate(-1.5deg);
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  box-shadow: 0 2mm 4mm rgba(0, 0, 0, .18);
+  border-radius: var(--card-radius);
+}
+
+/* Inside stack mini-card: safe-zone inset only (no bleed) */
+#card1-section .stack-mini-card .card-inner {
+  inset: var(--safe);
+}
+
+#card1-section .paperclip {
+  right:  12mm;
+  bottom: 10mm;
+  width:  14mm;
+  height: 36mm;
+}

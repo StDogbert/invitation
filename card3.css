@@ -1,0 +1,219 @@
+/* ============================================================
+   card3.css — Card 03 specific styles (80×120mm dinner)
+   bg: #FC8A2D (princeton orange)  ink: #FCE9AB (vanilla)
+   ============================================================ */
+
+#card3-section {
+  --card-bg:     #FC8A2D;
+  --card-ink:    #FCE9AB;
+  --card-radius: 6mm;
+  --trim-w:  80mm;
+  --trim-h:  120mm;
+  --bleed:   3mm;
+  --safe:    5mm;
+  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
+
+  /* Card refs for stack */
+  --c1-w:  110mm;  --c1-h:  155mm;
+  --c1-bg: #F7D4D8; --c1-ink: #C42B34;
+  --c2-w:  80mm;   --c2-h:  135mm;
+  --c2-bg: #F691A9; --c2-ink: #FCE9AB;
+}
+
+/* Frame dimensions */
+#card3-section .card-frame {
+  width:  var(--full-w);
+  height: var(--full-h);
+}
+
+/* card-inner for c3 uses flex column */
+#card3-section .card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+#card3-section .c3-head {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6mm;
+  line-height: 1.05;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+#card3-section .c3-head .line { display: block; }
+
+/* ── Centered content group ───────────────────────────────── */
+#card3-section .c3-content {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8mm;
+}
+
+/* ── Body paragraph ───────────────────────────────────────── */
+#card3-section .c3-body {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 4.5mm;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  padding: 0 1mm;
+}
+
+/* ── Details grid ─────────────────────────────────────────── */
+#card3-section .c3-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.5mm;
+  row-gap: 2mm;
+  justify-content: start;
+  align-items: baseline;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+#card3-section .c3-details dt {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 4mm;
+  font-weight: 500;
+  text-align: left;
+  opacity: .85;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+#card3-section .c3-details dt::after { content: ':'; }
+
+#card3-section .c3-details dd {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4mm;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: left;
+}
+
+#card3-section .c3-details dd em {
+  font-style: italic;
+  font-weight: 400;
+  opacity: .85;
+  font-size: 3.4mm;
+}
+
+/* ── Stack mockup ─────────────────────────────────────────── */
+#card3-section .stack-stage {
+  width: var(--c1-w);
+  position: relative;
+}
+
+#card3-section .stack {
+  position: relative;
+  width:  calc(var(--c1-w) + 40mm);
+  height: calc(var(--c1-h) + 40mm);
+  margin: 0 auto;
+}
+
+/* Card 01 */
+#card3-section .stack-c1 {
+  position: absolute;
+  left: 20mm; top: 20mm;
+  width:  var(--c1-w);
+  height: var(--c1-h);
+  background: var(--c1-bg);
+  color:      var(--c1-ink);
+  border-radius: 6mm;
+  box-shadow: 0 1mm 3mm rgba(0, 0, 0, .15);
+  overflow: hidden;
+}
+
+#card3-section .stack-c1 .inner { position: absolute; inset: var(--safe); }
+
+#card3-section .stack-c1 .s-names {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 7mm;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#card3-section .stack-c1 .s-name { display: inline; font-size: inherit; line-height: inherit; }
+#card3-section .stack-c1 .s-amp  { display: inline; font-size: inherit; opacity: .85; margin: 0 0.6mm; line-height: inherit; }
+
+#card3-section .stack-c1 .s-date {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#card3-section .stack-c1 .s-date span {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 16mm;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+#card3-section .stack-c1 .s-date span + span { margin-top: 2mm; }
+
+/* Card 02 layer */
+#card3-section .stack-c2 {
+  position: absolute;
+  right: 20mm; bottom: 20mm;
+  width:  var(--c2-w);
+  height: var(--c2-h);
+  background: var(--c2-bg);
+  color:      var(--c2-ink);
+  border-radius: 6mm;
+  box-shadow: 0 1.5mm 4mm rgba(0, 0, 0, .20);
+  overflow: hidden;
+}
+
+#card3-section .stack-c2 .inner { position: absolute; inset: var(--safe); }
+
+#card3-section .stack-c2 .c2-head {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-size: 6mm;
+  line-height: 1.05;
+  margin-top: 0;
+}
+
+#card3-section .stack-c2 .c2-head span { display: block; }
+
+/* Card 03 on top */
+#card3-section .stack-c3 {
+  position: absolute;
+  right: 20mm; bottom: 20mm;
+  width:  var(--trim-w);
+  height: var(--trim-h);
+  background: var(--card-bg);
+  color:      var(--card-ink);
+  border-radius: 6mm;
+  box-shadow: 0 2mm 5mm rgba(0, 0, 0, .22);
+  overflow: hidden;
+}
+
+#card3-section .stack-c3 .card-inner { inset: var(--safe); }
+
+#card3-section .paperclip {
+  right:  24mm;
+  bottom: 12mm;
+  width:  12mm;
+  height: 28mm;
+}

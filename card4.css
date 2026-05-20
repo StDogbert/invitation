@@ -1,0 +1,391 @@
+/* ============================================================
+   card4.css — Card 04 specific styles (80×105mm arch "ждем вас")
+   bg: #F86D68 (coral/salmon)  ink: #FCE9AB (vanilla)
+   Shape: arch/medallion (half-circle top, straight sides+bottom)
+   ============================================================ */
+
+#card4-section {
+  --card-bg:  #F86D68;
+  --card-ink: #FCE9AB;
+  --trim-w:   80mm;
+  --trim-h:   105mm;
+  --bleed:    3mm;
+  --safe:     5mm;
+  --full-w:   calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h:   calc(var(--trim-h) + var(--bleed) * 2);
+
+  /* Refs for full-stack view */
+  --c1-w:  110mm;  --c1-h:  155mm;
+  --c1-bg: #F7D4D8; --c1-ink: #C42B34;
+  --c2-w:  80mm;   --c2-h:  135mm;
+  --c2-bg: #F691A9; --c2-ink: #FCE9AB;
+  --c3-w:  80mm;   --c3-h:  120mm;
+  --c3-bg: #FC8A2D; --c3-ink: #FCE9AB;
+}
+
+/* Frame dimensions */
+#card4-section .card-frame {
+  width:  var(--full-w);
+  height: var(--full-h);
+}
+
+/* ── Bounding-box dashed outline (instead of rect bleed line) */
+#card4-section .card-frame.show-marks .bbox {
+  position: absolute;
+  inset: 0;
+  border: 1px dashed #11111155;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#card4-section .card-frame:not(.show-marks) .bbox { display: none; }
+
+/* Override default ::before / ::after marks — Card 04 uses SVG path instead */
+#card4-section .card-frame.show-marks::before,
+#card4-section .card-frame.show-marks::after { display: none; }
+
+/* ── SVG arch shape ───────────────────────────────────────── */
+#card4-section .card-svg {
+  position: absolute;
+  inset: var(--bleed);
+  overflow: visible;
+}
+
+#card4-section .card-svg .cut {
+  fill: var(--card-bg);
+  stroke: none;
+}
+
+#card4-section .card-svg .cut-line {
+  fill: none;
+  stroke: #111;
+  stroke-width: 0.25mm;
+  vector-effect: non-scaling-stroke;
+  display: none;
+}
+
+#card4-section .card-svg .bleed-line {
+  fill: none;
+  stroke: #b03038;
+  stroke-width: 0.25mm;
+  stroke-dasharray: 1mm 0.8mm;
+  vector-effect: non-scaling-stroke;
+  display: none;
+}
+
+#card4-section .card-frame.show-marks .cut-line   { display: block; }
+#card4-section .card-frame.show-marks .bleed-line { display: block; }
+
+/* ── Text overlay ─────────────────────────────────────────── */
+#card4-section .card-text {
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  text-align: center;
+  color: var(--card-ink);
+  z-index: 4;
+  line-height: 0.9;
+}
+
+#card4-section .card-text .l-zhdem {
+  display: block;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6mm;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+}
+
+#card4-section .card-text .l-vas {
+  display: block;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10mm;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+  margin-top: 2mm;
+}
+
+/* ── Full stack mockup (all 4 cards) ─────────────────────── */
+#card4-section .stack-stage {
+  width: calc(var(--c1-w) + 60mm);
+  position: relative;
+}
+
+#card4-section .stack {
+  position: relative;
+  width:  calc(var(--c1-w) + 60mm);
+  height: calc(var(--c1-h) + 40mm);
+  margin: 0 auto;
+}
+
+/* Card 01 */
+#card4-section .stack-c1 {
+  position: absolute;
+  left: 30mm; top: 20mm;
+  width:  var(--c1-w);
+  height: var(--c1-h);
+  background: var(--c1-bg);
+  color:      var(--c1-ink);
+  border-radius: 6mm;
+  box-shadow: 0 1mm 3mm rgba(0, 0, 0, .15);
+  overflow: hidden;
+}
+
+#card4-section .stack-c1 .inner { position: absolute; inset: var(--safe); }
+
+#card4-section .stack-c1 .s-names {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 7mm;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#card4-section .stack-c1 .s-name,
+#card4-section .stack-c1 .s-amp {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  opacity: 1;
+}
+
+#card4-section .stack-c1 .s-amp { opacity: .85; margin: 0 0.6mm; }
+
+#card4-section .stack-c1 .s-date {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#card4-section .stack-c1 .s-date span {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 16mm;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+#card4-section .stack-c1 .s-date span + span { margin-top: 2mm; }
+
+/* Card 02 */
+#card4-section .stack-c2 {
+  position: absolute;
+  right: 30mm; bottom: 20mm;
+  width:  var(--c2-w);
+  height: var(--c2-h);
+  background: var(--c2-bg);
+  color:      var(--c2-ink);
+  border-radius: 6mm;
+  box-shadow: 0 1.5mm 4mm rgba(0, 0, 0, .18);
+  overflow: hidden;
+}
+
+#card4-section .stack-c2 .inner {
+  position: absolute;
+  inset: var(--safe);
+  display: flex;
+  flex-direction: column;
+}
+
+#card4-section .stack-c2 .c2-head {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6mm;
+  line-height: 1.05;
+  margin-top: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+#card4-section .stack-c2 .c2-content {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8mm;
+}
+
+#card4-section .stack-c2 .c2-body {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 4.5mm;
+  line-height: 1.4;
+  padding: 0 1mm;
+}
+
+#card4-section .stack-c2 .c2-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.5mm;
+  row-gap: 2mm;
+  justify-content: start;
+  align-items: baseline;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+#card4-section .stack-c2 .c2-details dt {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 4mm;
+  font-weight: 500;
+  opacity: .85;
+  white-space: nowrap;
+}
+
+#card4-section .stack-c2 .c2-details dt::after { content: ':'; }
+
+#card4-section .stack-c2 .c2-details dd {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4mm;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* Card 03 */
+#card4-section .stack-c3 {
+  position: absolute;
+  right: 30mm; bottom: 20mm;
+  width:  var(--c3-w);
+  height: var(--c3-h);
+  background: var(--c3-bg);
+  color:      var(--c3-ink);
+  border-radius: 6mm;
+  box-shadow: 0 2mm 5mm rgba(0, 0, 0, .20);
+  overflow: hidden;
+}
+
+#card4-section .stack-c3 .inner {
+  position: absolute;
+  inset: var(--safe);
+  display: flex;
+  flex-direction: column;
+}
+
+#card4-section .stack-c3 .c3-head {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6mm;
+  line-height: 1.05;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+#card4-section .stack-c3 .c3-content {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8mm;
+}
+
+#card4-section .stack-c3 .c3-body {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 4.5mm;
+  line-height: 1.4;
+  padding: 0 1mm;
+}
+
+#card4-section .stack-c3 .c3-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.5mm;
+  row-gap: 2mm;
+  justify-content: start;
+  align-items: baseline;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+#card4-section .stack-c3 .c3-details dt {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 4mm;
+  font-weight: 500;
+  opacity: .85;
+  white-space: nowrap;
+}
+
+#card4-section .stack-c3 .c3-details dt::after { content: ':'; }
+
+#card4-section .stack-c3 .c3-details dd {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4mm;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* Card 04 arch in stack */
+#card4-section .stack-c4 {
+  position: absolute;
+  right: 30mm; bottom: 20mm;
+  width:  var(--trim-w);
+  height: var(--trim-h);
+  filter: drop-shadow(0 2mm 5mm rgba(0, 0, 0, .22));
+}
+
+#card4-section .stack-c4 svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#card4-section .stack-c4 .c4-text {
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  text-align: center;
+  color: var(--card-ink);
+  z-index: 2;
+  line-height: 0.9;
+}
+
+#card4-section .stack-c4 .c4-text .l-zhdem {
+  display: block;
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 4.5mm;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+}
+
+#card4-section .stack-c4 .c4-text .l-vas {
+  display: block;
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 7mm;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.18em;
+  margin-top: 1.5mm;
+}
+
+#card4-section .paperclip {
+  right:  40mm;
+  bottom: 22mm;
+  width:  12mm;
+  height: 28mm;
+}

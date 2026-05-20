@@ -1,0 +1,385 @@
+/* ============================================================
+   styles.css — shared outer shell styles
+   Wedding invitation · Александр & Ксения · 27.06.2026
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Root tokens ──────────────────────────────────────────── */
+:root {
+  --ink:   #1a1612;
+  --paper: #f1ebe2;
+  --line:  #d8cdbb;
+
+  /* Palette */
+  --tomato:    #C42B34;
+  --orange:    #FC8A2D;
+  --blush:     #DC4F7C;
+  --vanilla:   #FCE9AB;
+  --baby:      #F7D4D8;
+  --bubblegum: #F691A9;
+  --coral:     #F86D68;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  min-height: 100vh;
+}
+
+body {
+  padding: 28px 36px 60px;
+}
+
+/* ── App header ───────────────────────────────────────────── */
+.app-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+  gap: 24px;
+}
+
+.app-head h1 {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+}
+
+.app-head .subtitle {
+  font-size: 11px;
+  opacity: .6;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.app-head .meta {
+  display: flex;
+  gap: 28px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.app-head .meta > div { white-space: nowrap; }
+.app-head .meta b    { display: block; font-weight: 500; opacity: .55; margin-bottom: 3px; }
+.app-head .meta span { font-weight: 500; }
+
+/* ── Navigation tabs ──────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.tabs button {
+  display: block;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-bottom: 0;
+  margin-right: -1px;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.tabs button.tab-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tabs button:hover:not(.tab-active) {
+  background: rgba(0, 0, 0, .05);
+}
+
+/* ── Workspace layout ─────────────────────────────────────── */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Stage (preview area) ─────────────────────────────────── */
+.stage {
+  position: relative;
+  background: #e8e1d3;
+  border: 1px solid var(--line);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  min-height: 80vh;
+}
+
+.stage-label {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+/* ── Toolbar ──────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  gap: 6px;
+  background: #fff;
+  padding: 4px;
+  border: 1px solid var(--line);
+}
+
+.toolbar button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.toolbar button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ── Card frame (bleed box) ───────────────────────────────── */
+.card-frame {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Bleed dashed border */
+.card-frame.show-marks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px dashed #b03038;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Trim (cut) line */
+.card-frame.show-marks::after {
+  content: '';
+  position: absolute;
+  inset: var(--bleed, 3mm);
+  border: 1px solid #111;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* Safe zone */
+.card-frame.show-marks .safe-mark {
+  position: absolute;
+  inset: calc(var(--bleed, 3mm) + var(--safe, 5mm));
+  border: 1px dashed #2a8a5b;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.card-frame:not(.show-marks) .safe-mark { display: none; }
+
+/* ── Crop marks ───────────────────────────────────────────── */
+.crop-marks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+  display: none;
+}
+
+.card-frame.show-marks .crop-marks { display: block; }
+
+.crop-marks span     { position: absolute; background: #111; }
+.crop-marks .h       { height: 1px; width: 8mm; }
+.crop-marks .v       { width: 1px; height: 8mm; }
+.crop-marks .tl-h    { top: var(--bleed, 3mm); left: -8mm; }
+.crop-marks .tl-v    { left: var(--bleed, 3mm); top: -8mm; }
+.crop-marks .tr-h    { top: var(--bleed, 3mm); right: -8mm; }
+.crop-marks .tr-v    { right: var(--bleed, 3mm); top: -8mm; }
+.crop-marks .bl-h    { bottom: var(--bleed, 3mm); left: -8mm; }
+.crop-marks .bl-v    { left: var(--bleed, 3mm); bottom: -8mm; }
+.crop-marks .br-h    { bottom: var(--bleed, 3mm); right: -8mm; }
+.crop-marks .br-v    { right: var(--bleed, 3mm); bottom: -8mm; }
+
+/* ── Card clip + card base ────────────────────────────────── */
+.card-clip {
+  position: absolute;
+  inset: var(--bleed, 3mm);
+  border-radius: var(--card-radius, 6mm);
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  background: var(--card-bg);
+  color: var(--card-ink);
+  overflow: hidden;
+}
+
+.card-inner {
+  position: absolute;
+  inset: calc(var(--bleed, 3mm) + var(--safe, 5mm));
+  overflow: hidden;
+}
+
+/* ── Legend ───────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  gap: 18px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: .75;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legend i {
+  display: inline-block;
+  width: 18px;
+  height: 0;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.legend .l-bleed i { border-top: 1px dashed #b03038; }
+.legend .l-trim  i { border-top: 1px solid #111;     }
+.legend .l-safe  i { border-top: 1px dashed #2a8a5b; }
+.legend .l-bbox  i { border-top: 1px dashed #11111155; }
+
+/* ── Stack mockup (shared) ────────────────────────────────── */
+.stack-stage { display: none; }
+.stage.show-stack .card-frame { display: none; }
+.stage.show-stack .stack-stage { display: block; }
+
+.stack-caption {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 11px;
+  opacity: .6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Paperclip SVG */
+.paperclip {
+  position: absolute;
+  z-index: 20;
+}
+
+/* ── Side panel ───────────────────────────────────────────── */
+.side {
+  position: sticky;
+  top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.panel {
+  border: 1px solid var(--ink);
+  padding: 18px;
+  background: var(--paper);
+}
+
+.panel h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.panel dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  font-size: 11px;
+}
+
+.panel dt { opacity: .6; }
+.panel dd { text-align: right; font-weight: 500; }
+
+.panel .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.panel .row:last-child { border-bottom: 0; }
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  flex-shrink: 0;
+}
+
+.panel .row code {
+  font-size: 10px;
+  opacity: .7;
+  margin-left: auto;
+}
+
+.notes {
+  font-size: 11px;
+  line-height: 1.55;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.notes p + p { margin-top: 8px; }
+.notes b     { font-weight: 600; }
+.notes hr    {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 12px 0;
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  body { background: #fff; padding: 0; }
+  .app-head, .tabs, .side, .toolbar, .legend, .stage-label { display: none !important; }
+  .workspace { display: block; }
+  .stage { background: #fff; border: 0; padding: 0; min-height: auto; }
+  .card-frame.show-marks::before,
+  .card-frame.show-marks::after,
+  .card-frame.show-marks .safe-mark { display: none; }
+}
