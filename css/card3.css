@@ -38,10 +38,10 @@
   text-align: center;
   font-family: var(--font-display);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 8mm;
   line-height: 1;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 0;
 }
@@ -59,11 +59,11 @@
 /* ── Body paragraph ───────────────────────────────────────── */
 #card3-section .c3-body {
   text-align: center;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 4.8mm;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 3.8mm;
   line-height: 1.55;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   padding: 0 1mm;
 }
 
@@ -85,7 +85,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 2.5mm;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   text-align: right;
   opacity: .6;

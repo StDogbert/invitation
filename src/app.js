@@ -100,9 +100,10 @@
   function detailRows(details, withSep = false) {
     return details.map(d => {
       const em = d.descEm ? ` <em>${d.descEm}</em>` : '';
+      const sub = d.descSub ? `<span class="sub">${d.descSub}</span>` : '';
       const cls = d.descClass ? ` class="${d.descClass}"` : '';
       const sep = withSep ? '<span class="sep">|</span>' : '';
-      return `<dt>${d.term}</dt>${sep}<dd${cls}>${d.desc}${em}</dd>`;
+      return `<dt>${d.term}</dt>${sep}<dd${cls}>${d.desc}${em}${sub}</dd>`;
     }).join('');
   }
 
@@ -177,7 +178,7 @@
   // ── Card 02 ───────────────────────────────────────────────────
   function buildCard2() {
     const card = d.cards[1];
-    const details = detailRows(card.details);
+    const details = detailRows(card.details, true);
     const cardContent = `
       <div class="card-clip">
         <div class="card">

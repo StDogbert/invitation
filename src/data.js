@@ -80,14 +80,14 @@ const INVITATION_DATA = {
       ],
 
       fonts: [
-        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'имена, дата'       },
-        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'основной текст'    },
+        { family: "'Playfair Display', serif", cssVar: '--font-display', label: 'Playfair Display', role: 'имена, дата'    },
+        { family: "'Montserrat', sans-serif",  cssVar: '--font-body',    label: 'Montserrat',       role: 'основной текст' },
       ],
 
-      fontNote: 'Перед отправкой в печать шрифты должны быть переведены в кривые.',
+      fontNote: 'Перед отправкой в печать шрифты должны быть переведены в кривые.',
 
       notes: [
-        '<b>Размещение на карточке 01:</b>',
+        '<b>Размещение на карточке 01:</b>',
         '↑ Сверху по центру — имена «АЛЕКСАНДР &amp; КСЕНИЯ» в одну строку.',
         '↙ Левый нижний угол — дата столбиком <b>27 / 06 / 26</b>.',
         '→ Ниже середины, справа — текст приглашения по центру.',
@@ -122,33 +122,32 @@ const INVITATION_DATA = {
       },
 
       meta: [
-        { label: 'Карточка',    value: '80 × 135 мм' },
-        { label: 'С вылетами',  value: '86 × 141 мм' },
-        { label: 'Скругление',  value: 'R 6 мм'      },
-        { label: 'Версия',      value: 'v1.0'             },
+        { label: 'Карточка',    value: '80 × 135 мм' },
+        { label: 'С вылетами',  value: '86 × 141 мм' },
+        { label: 'Скругление',  value: 'R 6 мм'      },
+        { label: 'Версия',      value: 'v1.0'         },
       ],
 
       specs: [
-        { label: 'Финальный размер',    value: '80 × 135 мм'           },
-        { label: 'С вылетами',          value: '86 × 141 мм'           },
-        { label: 'Вылет (bleed)',        value: '3 мм'                  },
-        { label: 'Безопасная зона',     value: '5 мм'                  },
-        { label: 'Скругление углов',    value: 'R 6 мм (×4)'      },
+        { label: 'Финальный размер',    value: '80 × 135 мм'                },
+        { label: 'С вылетами',          value: '86 × 141 мм'                },
+        { label: 'Вылет (bleed)',        value: '3 мм'                       },
+        { label: 'Безопасная зона',     value: '5 мм'                       },
+        { label: 'Скругление углов',    value: 'R 6 мм (×4)'               },
         { label: 'Ориентация',          value: 'портрет'                    },
-        { label: 'Бумага',              value: 'дизайнерская, 300–350 г/м²' },
+        { label: 'Бумага',              value: 'дизайнерская, 300–350 г/м²' },
         { label: 'Цветовой режим',      value: 'CMYK / Pantone'             },
-        { label: 'Разрешение',          value: '300 dpi'               },
+        { label: 'Разрешение',          value: '300 dpi'                    },
       ],
 
       colors: [
-        { hex: '#F691A9', name: 'Bubblegum',       role: 'фон'   },
-        { hex: '#FFFFFF', name: 'White',           role: 'текст' },
+        { hex: '#F691A9', name: 'Bubblegum', role: 'фон'   },
+        { hex: '#FFFFFF', name: 'White',     role: 'текст' },
       ],
 
       fonts: [
-        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'заголовок'        },
-        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'текст, реквизиты' },
-        { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
+        { family: "'Cormorant Garamond', serif", cssVar: '--font-display', label: 'Cormorant Garamond', role: 'заголовок'        },
+        { family: "'Manrope', sans-serif",        cssVar: '--font-body',    label: 'Manrope',           role: 'текст, реквизиты' },
       ],
 
       fontNote: 'Перед отправкой в печать шрифты должны быть переведены в кривые.',
@@ -169,7 +168,7 @@ const INVITATION_DATA = {
       body: 'Ждём вас на нашей торжественной регистрации.\nБудем счастливы видеть ваши улыбки и поддержку в этот важный миг!',
       details: [
         { term: 'Время',    desc: '12:00' },
-        { term: 'Локация',  desc: 'ЗАГС', descEm: '(Sala de solimnitați)' },
+        { term: 'Локация',  desc: 'SALA DE SOLIMNITAȚI', descEm: 'ЗАГС', descSub: 'зал торжественной регистрации', descClass: 'featured' },
         { term: 'Адрес',    desc: 'ул. Дечебал, 6' },
       ],
 
@@ -221,9 +220,8 @@ const INVITATION_DATA = {
       colorNote: 'Контраст белого на оранжевом ≈2.3:1 — для декоративного крупного текста.',
 
       fonts: [
-        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'заголовок'        },
-        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'текст, реквизиты' },
-        { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
+        { family: "'Cormorant Garamond', serif", cssVar: '--font-display', label: 'Cormorant Garamond', role: 'заголовок'        },
+        { family: "'Manrope', sans-serif",        cssVar: '--font-body',    label: 'Manrope',           role: 'текст, реквизиты' },
       ],
 
       notes: [
@@ -239,7 +237,7 @@ const INVITATION_DATA = {
 
       // Card-specific content
       heading: 'Ужин',
-      body: 'После регистрации продолжим праздник за общим столом — в тёплой и весёлой компании!',
+      body: 'После регистрации продолжим праздник за общим столом — в тёплой и весёлой компании.',
       details: [
         { term: 'Время',    desc: '17:00' },
         { term: 'Локация',  desc: 'BAF BULVAR', descEm: 'ресторан', descClass: 'featured' },
