@@ -97,11 +97,12 @@
   }
 
   // ── Details list helper (cards 2, 3) ──────────────────────────
-  function detailRows(details) {
+  function detailRows(details, withSep = false) {
     return details.map(d => {
       const em = d.descEm ? ` <em>${d.descEm}</em>` : '';
       const cls = d.descClass ? ` class="${d.descClass}"` : '';
-      return `<dt>${d.term}</dt><dd${cls}>${d.desc}${em}</dd>`;
+      const sep = withSep ? '<span class="sep">|</span>' : '';
+      return `<dt>${d.term}</dt>${sep}<dd${cls}>${d.desc}${em}</dd>`;
     }).join('');
   }
 
@@ -226,7 +227,7 @@
   // ── Card 03 ───────────────────────────────────────────────────
   function buildCard3() {
     const card = d.cards[2];
-    const details = detailRows(card.details);
+    const details = detailRows(card.details, true);
     const card2 = d.cards[1];
     const card2Details = detailRows(card2.details);
 
