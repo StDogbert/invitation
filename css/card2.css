@@ -1,0 +1,200 @@
+/* ============================================================
+   card2.css — Card 02 specific styles (80×135mm registration)
+   bg: #F691A9 (bubblegum)  ink: #FCE9AB (vanilla)
+   ============================================================ */
+
+#card2-section {
+  --card-bg:     #F691A9;
+  --card-ink:    #FCE9AB;
+  --card-radius: 6mm;
+  --trim-w:  80mm;
+  --trim-h:  135mm;
+  --bleed:   3mm;
+  --safe:    5mm;
+  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
+
+  /* Card 01 reference (for stack) */
+  --c1-w:  110mm;
+  --c1-h:  155mm;
+  --c1-bg: #F7D4D8;
+  --c1-ink:#C42B34;
+}
+
+/* Frame dimensions */
+#card2-section .card-frame {
+  width:  var(--full-w);
+  height: var(--full-h);
+}
+
+/* card-inner for c2 uses flex column */
+#card2-section .card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+#card2-section .c2-head {
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6mm;
+  line-height: 1.05;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+#card2-section .c2-head .line { display: block; }
+
+/* ── Centered content group ───────────────────────────────── */
+#card2-section .c2-content {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8mm;
+}
+
+/* ── Body paragraph ───────────────────────────────────────── */
+#card2-section .c2-body {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 4.5mm;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  padding: 0 1mm;
+}
+
+/* ── Details grid ─────────────────────────────────────────── */
+#card2-section .c2-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.5mm;
+  row-gap: 2mm;
+  justify-content: start;
+  align-items: baseline;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+#card2-section .c2-details dt {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 4mm;
+  font-weight: 500;
+  text-align: left;
+  opacity: .85;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+#card2-section .c2-details dt::after { content: ':'; }
+
+#card2-section .c2-details dd {
+  font-family: var(--font-body);
+  font-size: 4mm;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: left;
+}
+
+#card2-section .c2-details dd em {
+  font-style: italic;
+  font-weight: 400;
+  opacity: .85;
+  font-size: 3.6mm;
+}
+
+/* ── Stack mockup ─────────────────────────────────────────── */
+#card2-section .stack-stage {
+  width: var(--c1-w);
+  position: relative;
+}
+
+#card2-section .stack {
+  position: relative;
+  width:  calc(var(--c1-w) + 40mm);
+  height: calc(var(--c1-h) + 40mm);
+  margin: 0 auto;
+}
+
+/* Base Card 01 ghost */
+#card2-section .stack-c1 {
+  position: absolute;
+  left: 20mm; top: 20mm;
+  width:  var(--c1-w);
+  height: var(--c1-h);
+  background: var(--c1-bg);
+  color:      var(--c1-ink);
+  border-radius: 6mm;
+  box-shadow: 0 1mm 3mm rgba(0, 0, 0, .15);
+  overflow: hidden;
+}
+
+#card2-section .stack-c1 .inner {
+  position: absolute;
+  inset: var(--safe);
+}
+
+#card2-section .stack-c1 .s-names {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 7mm;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#card2-section .stack-c1 .s-names span { display: inline; }
+#card2-section .stack-c1 .s-name  { font-size: inherit; line-height: inherit; }
+#card2-section .stack-c1 .s-amp   { font-size: inherit; opacity: .85; margin: 0 0.6mm; line-height: inherit; }
+
+#card2-section .stack-c1 .s-date {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+#card2-section .stack-c1 .s-date span {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 16mm;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+#card2-section .stack-c1 .s-date span + span { margin-top: 2mm; }
+
+/* Card 02 on top — right+bottom flush with card 01 */
+#card2-section .stack-c2 {
+  position: absolute;
+  right:  20mm;
+  bottom: 20mm;
+  width:  var(--trim-w);
+  height: var(--trim-h);
+  background: var(--card-bg);
+  color:      var(--card-ink);
+  border-radius: 6mm;
+  box-shadow: 0 2mm 5mm rgba(0, 0, 0, .22);
+  overflow: hidden;
+}
+
+#card2-section .stack-c2 .card-inner {
+  inset: var(--safe);
+}
+
+#card2-section .paperclip {
+  right:  24mm;
+  bottom: 12mm;
+  width:  12mm;
+  height: 28mm;
+}
