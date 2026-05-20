@@ -165,10 +165,10 @@ const INVITATION_DATA = {
 
       // Card-specific content
       heading: 'Регистрация',
-      body: 'Ждём вас на нашей торжественной регистрации.\nБудем счастливы видеть ваши улыбки и поддержку в этот важный миг!',
+      body: 'Ждём вас на нашей торжественной регистрации.\nБудем счастливы видеть ваши улыбки и поддержку в этот важный миг.',
       details: [
         { term: 'Время',    desc: '12:00' },
-        { term: 'Локация',  desc: 'SALA DE SOLIMNITAȚI', descEm: 'ЗАГС', descSub: 'зал торжественной регистрации', descClass: 'featured' },
+        { term: 'Локация',  desc: 'SALA DE SOLIMNITAȚI', descEm: 'ЗАГС', descClass: 'featured' },
         { term: 'Адрес',    desc: 'ул. Дечебал, 6' },
       ],
 

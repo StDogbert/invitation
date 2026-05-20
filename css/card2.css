@@ -139,8 +139,8 @@
 #card2-section .c2-details dd.featured {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 4.5mm;
-  letter-spacing: 0.1em;
+  font-size: 3.6mm;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
   line-height: 1;

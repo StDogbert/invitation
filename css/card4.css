@@ -260,6 +260,15 @@
   white-space: nowrap;
 }
 
+#card4-section .stack-c2 .c2-details dd.featured {
+  font-size: 3.2mm;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: normal;
+  line-height: 1.2;
+}
+
 /* Card 03 */
 #card4-section .stack-c3 {
   position: absolute;
@@ -335,6 +344,15 @@
   font-weight: 400;
   line-height: 1.15;
   white-space: nowrap;
+}
+
+#card4-section .stack-c3 .c3-details dd.featured {
+  font-size: 3.7mm;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 /* Card 04 arch in stack */
