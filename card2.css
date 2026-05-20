@@ -36,7 +36,7 @@
 /* ── Heading ──────────────────────────────────────────────── */
 #card2-section .c2-head {
   text-align: center;
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-display);
   font-style: normal;
   font-weight: 500;
   font-size: 6mm;
@@ -59,7 +59,7 @@
 /* ── Body paragraph ───────────────────────────────────────── */
 #card2-section .c2-body {
   text-align: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 4.5mm;
   line-height: 1.4;
@@ -76,11 +76,11 @@
   justify-content: start;
   align-items: baseline;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body);
 }
 
 #card2-section .c2-details dt {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-size: 4mm;
   font-weight: 500;
@@ -94,7 +94,7 @@
 #card2-section .c2-details dt::after { content: ':'; }
 
 #card2-section .c2-details dd {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body);
   font-size: 4mm;
   font-weight: 400;
   line-height: 1.15;
@@ -143,7 +143,7 @@
   position: absolute;
   left: 0; right: 0; top: 0;
   text-align: center;
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-display);
   font-style: normal;
   font-weight: 500;
   font-size: 7mm;
@@ -165,7 +165,7 @@
 }
 
 #card2-section .stack-c1 .s-date span {
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 16mm;
   line-height: 0.95;

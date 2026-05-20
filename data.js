@@ -80,8 +80,8 @@ const INVITATION_DATA = {
       ],
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           label: 'Bodoni Moda',         role: 'имена, дата'       },
-        { family: "'Cormorant Garamond', serif",    label: 'Cormorant Garamond',  role: 'основной текст'    },
+        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'имена, дата'       },
+        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'основной текст'    },
       ],
 
       fontNote: 'Перед отправкой в печать шрифты должны быть переведены в кривые.',
@@ -146,8 +146,8 @@ const INVITATION_DATA = {
       ],
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           label: 'Bodoni Moda',         role: 'заголовок'        },
-        { family: "'Cormorant Garamond', serif",    label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
+        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'заголовок'        },
+        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
         { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
       ],
 
@@ -221,8 +221,8 @@ const INVITATION_DATA = {
       colorNote: 'Контраст ≈3.0:1 — хорошо для заголовка и крупного текста.',
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           label: 'Bodoni Moda',         role: 'заголовок'        },
-        { family: "'Cormorant Garamond', serif",    label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
+        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'заголовок'        },
+        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
         { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
       ],
 
@@ -294,7 +294,7 @@ const INVITATION_DATA = {
       colorNote: 'Контраст ≈2.1:1 — приемлемо для крупного декоративного текста. Ваниль перекликается с К-02 и К-03.',
 
       fonts: [
-        { family: "'Bodoni Moda', serif", label: 'Bodoni Moda', role: '«Ждем вас» italic', size: '18px', italic: true },
+        { family: "'Bodoni Moda', serif", cssVar: '--font-display', label: 'Bodoni Moda', role: '«Ждем вас» italic', size: '18px', italic: true },
       ],
 
       notes: [

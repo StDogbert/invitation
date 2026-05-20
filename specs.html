@@ -41,6 +41,14 @@
       section.querySelector('.toolbar').remove();
       section.querySelector('.stack-stage').remove();
     });
+
+    // ?card=card1 → show only that card (used for per-card spec PDFs)
+    var only = new URLSearchParams(location.search).get('card');
+    if (only) {
+      document.querySelectorAll('.card-section').forEach(function (s) {
+        if (s.id !== only + '-section') s.style.display = 'none';
+      });
+    }
   </script>
 </body>
 </html>

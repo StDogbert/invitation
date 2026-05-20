@@ -27,6 +27,10 @@
   --baby:      #F7D4D8;
   --bubblegum: #F691A9;
   --coral:     #F86D68;
+
+  /* Fonts — defaults; app.js overrides per section from data.js */
+  --font-display: 'Bodoni Moda', serif;
+  --font-body:    'Cormorant Garamond', serif;
 }
 
 /* ── Base ─────────────────────────────────────────────────── */

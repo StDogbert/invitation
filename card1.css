@@ -34,7 +34,7 @@
 }
 
 #card1-section .date-col .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 16mm;
   letter-spacing: -0.02em;
@@ -52,7 +52,7 @@
   bottom: 28mm;
   width: 58mm;
   text-align: right;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: 4.1mm;
   line-height: 1.45;
@@ -65,7 +65,7 @@
   left: 0; right: 0;
   top: 0;
   text-align: center;
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-display);
   font-style: normal;
   font-weight: 500;
   font-size: 7mm;

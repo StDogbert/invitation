@@ -431,6 +431,7 @@
       const sectionWrapper = document.createElement('div');
       sectionWrapper.innerHTML = buildSection(card, content, i);
       const section = sectionWrapper.firstElementChild;
+      card.fonts.forEach(f => { if (f.cssVar) section.style.setProperty(f.cssVar, f.family); });
       if (i === 0) section.style.display = '';  // show first card
       app.appendChild(section);
     });
