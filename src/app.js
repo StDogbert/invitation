@@ -337,7 +337,7 @@
           </div>
           <div class="stack-c4">
             <svg viewBox="0 0 80 105" preserveAspectRatio="none">
-              <path fill="#F86D68" d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
+              <path fill="${card.cardBg}" d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
             </svg>
             <p class="c4-text">
               <span class="l-zhdem">${card.textLine1}</span>
@@ -436,6 +436,13 @@
       sectionWrapper.innerHTML = buildSection(card, content, i);
       const section = sectionWrapper.firstElementChild;
       card.fonts.forEach(f => { if (f.cssVar) section.style.setProperty(f.cssVar, f.family); });
+      section.style.setProperty('--card-bg', card.cardBg);
+      section.style.setProperty('--card-ink', card.cardInk);
+      if (card.cardRadius) section.style.setProperty('--card-radius', card.cardRadius);
+      d.cards.forEach((c, idx) => {
+        section.style.setProperty(`--c${idx + 1}-bg`, c.cardBg);
+        section.style.setProperty(`--c${idx + 1}-ink`, c.cardInk);
+      });
       if (i === 0) section.style.display = '';  // show first card
       app.appendChild(section);
     });

@@ -5,9 +5,6 @@
    ============================================================ */
 
 #card2-section {
-  --card-bg:     #F691A9;
-  --card-ink:    #FFFFFF;
-  --card-radius: 6mm;
   --trim-w:  80mm;
   --trim-h:  135mm;
   --bleed:   3mm;
@@ -15,11 +12,9 @@
   --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
   --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
 
-  /* Card 01 reference (for stack) */
+  /* Card 01 reference dimensions (for stack layout) */
   --c1-w:  110mm;
   --c1-h:  155mm;
-  --c1-bg: #F7D4D8;
-  --c1-ink:#C42B34;
 }
 
 /* Frame dimensions */
