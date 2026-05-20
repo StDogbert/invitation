@@ -10,9 +10,8 @@
  *   2. Run:                     node export-pdfs.js
  *
  * Output:
- *   pdfs/card-01.pdf … card-04.pdf         artwork at with-bleed dimensions
- *   pdfs/card-01-spec.pdf … card-04-spec.pdf  per-card technical spec sheet (A4 landscape)
- *   pdfs/specs.pdf                           combined 4-page spec sheet (A4 landscape)
+ *   pdfs/card-01.pdf … card-04.pdf               artwork at with-bleed dimensions
+ *   pdfs/card-01-spec.pdf … card-04-spec.pdf      per-card technical spec sheet (A4 landscape)
  *
  * ⚠️  Regenerate whenever text, colors, or dimensions change in data.js or card*.css
  */
@@ -68,19 +67,9 @@ async function exportArtwork(browser, outDir) {
 async function exportSpecs(browser, outDir) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1400, height: 900 });
+  // Use screen CSS so the sidebar (.side) is visible — print CSS hides it
+  await page.emulateMediaType('screen');
 
-  // Combined 4-page spec sheet
-  await page.goto(SPECS_URL, { waitUntil: 'networkidle0' });
-  await page.pdf({
-    path: path.join(outDir, 'specs.pdf'),
-    format: 'A4',
-    landscape: true,
-    printBackground: true,
-    margin: { top: '10mm', right: '15mm', bottom: '10mm', left: '15mm' },
-  });
-  console.log('  ✓  specs.pdf  (A4 landscape, 4 pages)');
-
-  // Per-card spec sheets
   for (const card of CARDS) {
     await page.goto(`${SPECS_URL}?card=${card.id}`, { waitUntil: 'networkidle0' });
     const file = card.file.replace('.pdf', '-spec.pdf');
@@ -107,7 +96,7 @@ async function main() {
   console.log('\nArtwork PDFs:');
   await exportArtwork(browser, outDir);
 
-  console.log('\nSpec sheet:');
+  console.log('\nSpec sheets:');
   await exportSpecs(browser, outDir);
 
   await browser.close();
