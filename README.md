@@ -24,4 +24,4 @@ npm install             # once (requires Node.js)
 node export-pdfs.js     # generates pdfs/card-0{1..4}.pdf
 ```
 
-PDFs are sized to the with-bleed dimensions. Send the `pdfs/` folder to the printing house.
+PDFs are sized to the with-bleed dimensions.
