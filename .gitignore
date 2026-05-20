@@ -1,5 +1,1 @@
-# Generated print PDFs — regenerate with: node export-pdfs.js
-pdfs/
-
-# Node modules (if puppeteer is installed)
 node_modules/
