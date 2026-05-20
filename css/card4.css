@@ -1,12 +1,12 @@
 /* ============================================================
    card4.css — Card 04 specific styles (80×105mm arch "ждем вас")
-   bg: #F86D68 (coral/salmon)  ink: #FCE9AB (vanilla)
+   bg: #F86D68 (coral/salmon)  ink: #FFFFFF (white)
    Shape: arch/medallion (half-circle top, straight sides+bottom)
    ============================================================ */
 
 #card4-section {
   --card-bg:  #F86D68;
-  --card-ink: #FCE9AB;
+  --card-ink: #FFFFFF;
   --trim-w:   80mm;
   --trim-h:   105mm;
   --bleed:    3mm;
@@ -18,9 +18,9 @@
   --c1-w:  110mm;  --c1-h:  155mm;
   --c1-bg: #F7D4D8; --c1-ink: #C42B34;
   --c2-w:  80mm;   --c2-h:  135mm;
-  --c2-bg: #F691A9; --c2-ink: #FCE9AB;
+  --c2-bg: #F691A9; --c2-ink: #FFFFFF;
   --c3-w:  80mm;   --c3-h:  120mm;
-  --c3-bg: #FC8A2D; --c3-ink: #FCE9AB;
+  --c3-bg: #FC8A2D; --c3-ink: #FFFFFF;
 }
 
 /* Frame dimensions */
@@ -218,14 +218,14 @@
   margin: auto 0;
   display: flex;
   flex-direction: column;
-  gap: 8mm;
+  gap: 12mm;
 }
 
 #card4-section .stack-c2 .c2-body {
   text-align: center;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 4.5mm;
+  font-size: 4.1mm;
   line-height: 1.4;
   padding: 0 1mm;
 }
@@ -244,7 +244,7 @@
 #card4-section .stack-c2 .c2-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4mm;
+  font-size: 3.7mm;
   font-weight: 500;
   opacity: .85;
   white-space: nowrap;
@@ -254,9 +254,10 @@
 
 #card4-section .stack-c2 .c2-details dd {
   font-family: var(--font-body);
-  font-size: 4mm;
+  font-size: 3.7mm;
   font-weight: 400;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 /* Card 03 */
@@ -294,14 +295,14 @@
   margin: auto 0;
   display: flex;
   flex-direction: column;
-  gap: 8mm;
+  gap: 12mm;
 }
 
 #card4-section .stack-c3 .c3-body {
   text-align: center;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 4.5mm;
+  font-size: 4.1mm;
   line-height: 1.4;
   padding: 0 1mm;
 }
@@ -320,7 +321,7 @@
 #card4-section .stack-c3 .c3-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4mm;
+  font-size: 3.7mm;
   font-weight: 500;
   opacity: .85;
   white-space: nowrap;
@@ -330,9 +331,10 @@
 
 #card4-section .stack-c3 .c3-details dd {
   font-family: var(--font-body);
-  font-size: 4mm;
+  font-size: 3.7mm;
   font-weight: 400;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 /* Card 04 arch in stack */

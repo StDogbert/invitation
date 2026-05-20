@@ -80,8 +80,8 @@ const INVITATION_DATA = {
       ],
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'имена, дата'       },
-        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'основной текст'    },
+        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'имена, дата'       },
+        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'основной текст'    },
       ],
 
       fontNote: 'Перед отправкой в печать шрифты должны быть переведены в кривые.',
@@ -111,7 +111,7 @@ const INVITATION_DATA = {
       subtitle: 'Информационная карточка — регистрация · Александр & Ксения',
 
       cardBg:     '#F691A9',
-      cardInk:    '#FCE9AB',
+      cardInk:    '#FFFFFF',
       cardRadius: '6mm',
 
       dims: {
@@ -142,12 +142,12 @@ const INVITATION_DATA = {
 
       colors: [
         { hex: '#F691A9', name: 'Bubblegum',       role: 'фон'   },
-        { hex: '#FCE9AB', name: 'Vanilla Custard', role: 'текст' },
+        { hex: '#FFFFFF', name: 'White',           role: 'текст' },
       ],
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'заголовок'        },
-        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
+        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'заголовок'        },
+        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'текст, реквизиты' },
         { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
       ],
 
@@ -184,7 +184,7 @@ const INVITATION_DATA = {
       subtitle: 'Праздничный ужин · Александр & Ксения',
 
       cardBg:     '#FC8A2D',
-      cardInk:    '#FCE9AB',
+      cardInk:    '#FFFFFF',
       cardRadius: '6mm',
 
       dims: {
@@ -215,14 +215,14 @@ const INVITATION_DATA = {
 
       colors: [
         { hex: '#FC8A2D', name: 'Princeton Orange', role: 'фон'   },
-        { hex: '#FCE9AB', name: 'Vanilla Custard',  role: 'текст' },
+        { hex: '#FFFFFF', name: 'White',            role: 'текст' },
       ],
 
-      colorNote: 'Контраст ≈3.0:1 — хорошо для заголовка и крупного текста.',
+      colorNote: 'Контраст белого на оранжевом ≈2.3:1 — для декоративного крупного текста.',
 
       fonts: [
-        { family: "'Bodoni Moda', serif",           cssVar: '--font-display',  label: 'Bodoni Moda',         role: 'заголовок'        },
-        { family: "'Cormorant Garamond', serif",    cssVar: '--font-body',     label: 'Cormorant Garamond',  role: 'текст, реквизиты' },
+        { family: "'Playfair Display', serif",           cssVar: '--font-display',  label: 'Playfair Display',         role: 'заголовок'        },
+        { family: "'Montserrat', sans-serif",    cssVar: '--font-body',     label: 'Montserrat',  role: 'текст, реквизиты' },
         { family: "'JetBrains Mono', monospace",    label: 'JetBrains Mono',      role: 'лейблы',  size: '11px' },
       ],
 
@@ -257,7 +257,7 @@ const INVITATION_DATA = {
       subtitle: 'Лицевая карточка · полукруг сверху · «Ждем вас»',
 
       cardBg:  '#F86D68',
-      cardInk: '#FCE9AB',
+      cardInk: '#FFFFFF',
 
       dims: {
         trimW: '80mm',
@@ -290,13 +290,13 @@ const INVITATION_DATA = {
       colors: [
         { hex: '#F86D68', name: 'Coral / Fuchsia',  role: 'фон'   },
         { hex: 'transparent', name: 'Pantone 15-0343 TCX', role: '', border: '1px solid #999' },
-        { hex: '#FCE9AB', name: 'Vanilla Custard',  role: 'текст' },
+        { hex: '#FFFFFF', name: 'White',            role: 'текст' },
       ],
 
-      colorNote: 'Контраст ≈2.1:1 — приемлемо для крупного декоративного текста. Ваниль перекликается с К-02 и К-03.',
+      colorNote: 'Контраст белого на коралловом ≈2.8:1 — для декоративного крупного текста.',
 
       fonts: [
-        { family: "'Bodoni Moda', serif", cssVar: '--font-display', label: 'Bodoni Moda', role: '«Ждем вас» italic', size: '18px', italic: true },
+        { family: "'Playfair Display', serif", cssVar: '--font-display', label: 'Playfair Display', role: '«Ждем вас» italic', size: '18px', italic: true },
       ],
 
       notes: [
