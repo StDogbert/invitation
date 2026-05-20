@@ -291,12 +291,19 @@
     const card2Details = detailRows(card2.details);
     const card3Details = detailRows(card3.details);
 
+    const w = parseFloat(card.dims.trimW);
+    const h = parseFloat(card.dims.trimH);
+    const b = parseFloat(card.dims.bleed);
+    const r = w / 2;
+    const archPath  = `M 0 ${h} L 0 ${r} A ${r} ${r} 0 0 1 ${w} ${r} L ${w} ${h} Z`;
+    const bleedPath = `M ${-b} ${h + b} L ${-b} ${r} A ${r + b} ${r + b} 0 0 1 ${w + b} ${r} L ${w + b} ${h + b} Z`;
+
     const cardContent = `
       <span class="bbox"></span>
-      <svg class="card-svg" viewBox="0 0 80 105" preserveAspectRatio="none">
-        <path class="cut"       d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
-        <path class="cut-line"  d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
-        <path class="bleed-line" d="M -3 108 L -3 40 A 43 43 0 0 1 83 40 L 83 108 Z"></path>
+      <svg class="card-svg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+        <path class="cut"        d="${archPath}"></path>
+        <path class="cut-line"   d="${archPath}"></path>
+        <path class="bleed-line" d="${bleedPath}"></path>
       </svg>
       <p class="card-text">
         <span class="l-zhdem">${card.textLine1}</span>
@@ -336,8 +343,8 @@
             </div>
           </div>
           <div class="stack-c4">
-            <svg viewBox="0 0 80 105" preserveAspectRatio="none">
-              <path fill="${card.cardBg}" d="M 0 105 L 0 40 A 40 40 0 0 1 80 40 L 80 105 Z"></path>
+            <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+              <path fill="${card.cardBg}" d="${archPath}"></path>
             </svg>
             <p class="c4-text">
               <span class="l-zhdem">${card.textLine1}</span>
@@ -439,9 +446,15 @@
       section.style.setProperty('--card-bg', card.cardBg);
       section.style.setProperty('--card-ink', card.cardInk);
       if (card.cardRadius) section.style.setProperty('--card-radius', card.cardRadius);
+      section.style.setProperty('--trim-w', card.dims.trimW);
+      section.style.setProperty('--trim-h', card.dims.trimH);
+      section.style.setProperty('--bleed',  card.dims.bleed);
+      section.style.setProperty('--safe',   card.dims.safe);
       d.cards.forEach((c, idx) => {
-        section.style.setProperty(`--c${idx + 1}-bg`, c.cardBg);
+        section.style.setProperty(`--c${idx + 1}-bg`,  c.cardBg);
         section.style.setProperty(`--c${idx + 1}-ink`, c.cardInk);
+        section.style.setProperty(`--c${idx + 1}-w`,   c.dims.trimW);
+        section.style.setProperty(`--c${idx + 1}-h`,   c.dims.trimH);
       });
       if (i === 0) section.style.display = '';  // show first card
       app.appendChild(section);

@@ -4,12 +4,8 @@
    ============================================================ */
 
 #card1-section {
-  --trim-w:  110mm;
-  --trim-h:  155mm;
-  --bleed:   3mm;
-  --safe:    5mm;
-  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
-  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
+  --full-w: calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h: calc(var(--trim-h) + var(--bleed) * 2);
 }
 
 /* Frame dimensions */

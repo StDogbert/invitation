@@ -4,16 +4,8 @@
    ============================================================ */
 
 #card3-section {
-  --trim-w:  80mm;
-  --trim-h:  120mm;
-  --bleed:   3mm;
-  --safe:    5mm;
-  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
-  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
-
-  /* Card ref dimensions (for stack layout) */
-  --c1-w:  110mm;  --c1-h:  155mm;
-  --c2-w:  80mm;   --c2-h:  135mm;
+  --full-w: calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h: calc(var(--trim-h) + var(--bleed) * 2);
 }
 
 /* Frame dimensions */
