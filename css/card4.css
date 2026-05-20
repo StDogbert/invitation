@@ -76,15 +76,8 @@
 #card4-section .card-frame.show-marks .cut-line   { display: block; }
 #card4-section .card-frame.show-marks .bleed-line { display: block; }
 
-/* ── Curved text SVG (С любовью, — textPath along arch) ──── */
-#card4-section .card-text-svg {
-  position: absolute;
-  inset: var(--bleed);
-  z-index: 4;
-  overflow: visible;
-}
-
-#card4-section .card-text-svg .l-slove {
+/* ── Curved «С любовью,» inside card-svg via textPath ─────── */
+#card4-section .card-svg .l-slove {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
