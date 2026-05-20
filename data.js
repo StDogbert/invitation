@@ -1,6 +1,10 @@
 /**
  * data.js — single source of truth for all wedding invitation content
  * Александр & Ксения · 27.06.2026
+ *
+ * ⚠️  After changing any text, color, or dimension here, regenerate the print PDFs:
+ *       node export-pdfs.js   (server must be running on port 8743)
+ *     or follow the manual Chrome export steps in README.md.
  */
 
 const INVITATION_DATA = {
