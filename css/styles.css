@@ -399,13 +399,9 @@ body {
     flex-shrink: 0;
   }
 
-  /* Workspace: single column, sidebar below (hidden for now) */
+  /* Workspace: single column, sidebar flows below the stage */
   .workspace {
     grid-template-columns: 1fr;
-  }
-
-  .side {
-    display: none;
   }
 
   /* Stage: tighter padding, card scrolls horizontally if wider than screen */
@@ -413,6 +409,10 @@ body {
     padding: 30px 20px;
     min-height: 0;
     overflow-x: auto;
+  }
+
+  .side {
+    position: static;
   }
 }
 
