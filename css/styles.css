@@ -377,6 +377,45 @@ body {
   margin: 12px 0;
 }
 
+/* ── Mobile ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  body {
+    padding: 16px 16px 40px;
+  }
+
+  /* Spec columns are for designers — hide on mobile */
+  .app-head .meta {
+    display: none;
+  }
+
+  /* Tabs: horizontally scrollable instead of wrapping */
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
+
+  .tabs button {
+    flex-shrink: 0;
+  }
+
+  /* Workspace: single column, sidebar below (hidden for now) */
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    display: none;
+  }
+
+  /* Stage: tighter padding, card scrolls horizontally if wider than screen */
+  .stage {
+    padding: 30px 20px;
+    min-height: 0;
+    overflow-x: auto;
+  }
+}
+
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   body { background: #fff; padding: 0; }
