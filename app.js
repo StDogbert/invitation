@@ -156,6 +156,7 @@
           <div class="stack-mini-card">
             <div class="card-inner">
               <aside class="date-col">${dateNums}</aside>
+              <p class="invite-text">${card.inviteText.replace('\n', '<br>')}</p>
               <h2 class="names">${coupleNames}</h2>
             </div>
           </div>
