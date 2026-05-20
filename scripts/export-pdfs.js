@@ -3,15 +3,16 @@
  *
  * Requirements:
  *   node >= 18
- *   npm install   (installs puppeteer)
+ *   npm install            (installs puppeteer)
+ *   ghostscript (optional) for CMYK conversion: brew install ghostscript
  *
  * Usage:
  *   1. Start the local server:  python3 -m http.server 8743
  *   2. Run:                     npm run export
  *
  * Output:
- *   pdfs/card-01.pdf … card-04.pdf               artwork at with-bleed dimensions
- *   pdfs/card-01-spec.pdf … card-04-spec.pdf      per-card technical spec sheet (A4 landscape)
+ *   pdfs/card-01.pdf … card-04.pdf               artwork — CMYK if Ghostscript available, RGB otherwise
+ *   pdfs/card-01-spec.pdf … card-04-spec.pdf      per-card technical spec sheet (A4 landscape, RGB)
  *
  * ⚠️  Regenerate whenever text, colors, or dimensions change in src/data.js or css/card*.css
  */
@@ -19,9 +20,40 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
+const { execFileSync } = require('child_process');
 
 const BASE_URL  = 'http://localhost:8743/index.html';
 const SPECS_URL = 'http://localhost:8743/specs.html';
+
+function ghostscriptAvailable() {
+  try {
+    execFileSync('gs', ['--version'], { stdio: 'ignore' });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Converts a PDF in-place from RGB to CMYK using Ghostscript.
+function convertToCmyk(filePath) {
+  const tmp = filePath.replace('.pdf', '-rgb-tmp.pdf');
+  fs.renameSync(filePath, tmp);
+  try {
+    execFileSync('gs', [
+      '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dQUIET',
+      '-sDEVICE=pdfwrite',
+      '-sColorConversionStrategy=CMYK',
+      '-dProcessColorModel=/DeviceCMYK',
+      '-dCompatibilityLevel=1.4',
+      `-sOutputFile=${filePath}`,
+      tmp,
+    ]);
+    fs.unlinkSync(tmp);
+  } catch (err) {
+    fs.renameSync(tmp, filePath); // restore original on failure
+    throw err;
+  }
+}
 
 // With-bleed dimensions (trim + 3 mm on every side)
 const CARDS = [
@@ -31,7 +63,7 @@ const CARDS = [
   { id: 'card4', file: 'card-04.pdf', bleedW:  86, bleedH: 111, label: 'Card 04 · Ждем вас' },
 ];
 
-async function exportArtwork(browser, outDir) {
+async function exportArtwork(browser, outDir, hasGs) {
   const page = await browser.newPage();
   await page.goto(BASE_URL, { waitUntil: 'networkidle0' });
 
@@ -50,15 +82,21 @@ async function exportArtwork(browser, outDir) {
 
     await new Promise(r => setTimeout(r, 300));
 
+    const outPath = path.join(outDir, card.file);
     await page.pdf({
-      path: path.join(outDir, card.file),
+      path: outPath,
       width: `${card.bleedW}mm`,
       height: `${card.bleedH}mm`,
       printBackground: true,
       margin: { top: '0', right: '0', bottom: '0', left: '0' },
     });
 
-    console.log(`  ✓  ${card.file}  (${card.bleedW} × ${card.bleedH} mm)  — ${card.label}`);
+    if (hasGs) {
+      convertToCmyk(outPath);
+      console.log(`  ✓  ${card.file}  (${card.bleedW} × ${card.bleedH} mm)  CMYK  — ${card.label}`);
+    } else {
+      console.log(`  ✓  ${card.file}  (${card.bleedW} × ${card.bleedH} mm)  RGB   — ${card.label}`);
+    }
   }
 
   await page.close();
@@ -90,11 +128,17 @@ async function main() {
   const outDir = path.join(__dirname, '..', 'pdfs');
   fs.mkdirSync(outDir, { recursive: true });
 
+  const hasGs = ghostscriptAvailable();
+  if (!hasGs) {
+    console.warn('\n⚠️  Ghostscript not found — artwork PDFs will be RGB (not print-ready CMYK).');
+    console.warn('   Install with: brew install ghostscript\n');
+  }
+
   console.log('Launching browser…');
   const browser = await puppeteer.launch({ headless: 'new' });
 
   console.log('\nArtwork PDFs:');
-  await exportArtwork(browser, outDir);
+  await exportArtwork(browser, outDir, hasGs);
 
   console.log('\nSpec sheets:');
   await exportSpecs(browser, outDir);
