@@ -296,8 +296,8 @@
         <path class="bleed-line" d="M -3 108 L -3 40 A 43 43 0 0 1 83 40 L 83 108 Z"></path>
       </svg>
       <p class="card-text">
-        <span class="l-zhdem">${card.textLine1}</span>
-        <span class="l-vas">${card.textLine2}</span>
+        <span class="l-slove">${card.textLine1}</span>
+        <span class="l-initials">${card.textLine2}</span>
       </p>`;
 
     const dateNums = d.couple.dateShort.map(n => `<span>${n}</span>`).join('');

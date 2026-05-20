@@ -311,8 +311,8 @@ const INVITATION_DATA = {
       toolbarLabels: ['с контуром реза', 'без меток', 'вся стопка'],
 
       // Card-specific content
-      textLine1: 'ждем',
-      textLine2: 'вас',
+      textLine1: 'С любовью,',
+      textLine2: 'А. &amp; К.',
 
       stackCaption: 'Полная стопка · К-04 (арка) сверху, прикрывает низ К-03 / К-02 / К-01 · видна верхняя часть даты',
     },

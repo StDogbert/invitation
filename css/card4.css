@@ -81,35 +81,33 @@
   position: absolute;
   left: 0; right: 0;
   top: 50%;
-  transform: translateY(-30%);
+  transform: translateY(-40%);
   text-align: center;
   color: var(--card-ink);
   z-index: 4;
-  line-height: 0.9;
 }
 
-#card4-section .card-text .l-zhdem {
+#card4-section .card-text .l-slove {
   display: block;
   font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 6mm;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-}
-
-#card4-section .card-text .l-vas {
-  display: block;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10mm;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 6.5mm;
+  letter-spacing: 0.06em;
   line-height: 1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-  margin-top: 2mm;
+  padding-left: 0.06em;
+  margin-bottom: 7mm;
+}
+
+#card4-section .card-text .l-initials {
+  display: block;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15mm;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding-left: 0.1em;
 }
 
 /* ── Full stack mockup (all 4 cards) ─────────────────────── */
@@ -363,26 +361,26 @@
   line-height: 0.9;
 }
 
-#card4-section .stack-c4 .c4-text .l-zhdem {
+#card4-section .stack-c4 .c4-text .l-slove {
   display: block;
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 4.5mm;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 4mm;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding-left: 0.06em;
+  margin-bottom: 3.5mm;
 }
 
-#card4-section .stack-c4 .c4-text .l-vas {
+#card4-section .stack-c4 .c4-text .l-initials {
   display: block;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 7mm;
+  font-size: 9mm;
   line-height: 1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-  margin-top: 1.5mm;
+  letter-spacing: 0.1em;
+  padding-left: 0.1em;
 }
 
 #card4-section .paperclip {
