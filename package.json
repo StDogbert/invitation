@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "export": "node scripts/export-pdfs.js"
+  },
   "dependencies": {
     "puppeteer": "^25.0.4"
   }

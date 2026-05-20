@@ -20,8 +20,10 @@ Everything is in **`src/data.js`** — text, specs, colors, fonts, notes.
 ## Export PDFs for print
 
 ```bash
-npm install             # once (requires Node.js)
-node scripts/export-pdfs.js     # generates pdfs/card-0{1..4}.pdf
+npm install       # once (requires Node.js)
+npm run export    # server must be running on port 8743
 ```
 
-PDFs are sized to the with-bleed dimensions.
+Generates in `pdfs/`:
+- `card-01.pdf` … `card-04.pdf` — artwork at with-bleed dimensions
+- `card-01-spec.pdf` … `card-04-spec.pdf` — technical spec sheets (A4 landscape)

@@ -7,13 +7,13 @@
  *
  * Usage:
  *   1. Start the local server:  python3 -m http.server 8743
- *   2. Run:                     node scripts/export-pdfs.js
+ *   2. Run:                     npm run export
  *
  * Output:
  *   pdfs/card-01.pdf … card-04.pdf               artwork at with-bleed dimensions
  *   pdfs/card-01-spec.pdf … card-04-spec.pdf      per-card technical spec sheet (A4 landscape)
  *
- * ⚠️  Regenerate whenever text, colors, or dimensions change in data.js or card*.css
+ * ⚠️  Regenerate whenever text, colors, or dimensions change in src/data.js or css/card*.css
  */
 
 const puppeteer = require('puppeteer');
