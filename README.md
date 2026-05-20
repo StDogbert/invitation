@@ -20,7 +20,7 @@ Everything is in **`data.js`** — text, specs, colors, fonts, notes.
 ## Export PDFs for print
 
 ```bash
-npm install puppeteer   # once
+npm install             # once (requires Node.js)
 node export-pdfs.js     # generates pdfs/card-0{1..4}.pdf
 ```
 
