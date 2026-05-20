@@ -18,7 +18,7 @@
   --c1-w:  110mm;  --c1-h:  155mm;
   --c1-bg: #F7D4D8; --c1-ink: #C42B34;
   --c2-w:  80mm;   --c2-h:  135mm;
-  --c2-bg: #F691A9; --c2-ink: #FCE9AB;
+  --c2-bg: #F691A9; --c2-ink: #FFFFFF;
 }
 
 /* Frame dimensions */
@@ -61,7 +61,7 @@
   text-align: center;
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 5mm;
+  font-size: 4.7mm;
   line-height: 1.45;
   letter-spacing: 0.01em;
   padding: 0 1mm;
@@ -82,7 +82,7 @@
 #card3-section .c3-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4.5mm;
+  font-size: 4.2mm;
   font-weight: 500;
   text-align: left;
   opacity: .85;
@@ -95,7 +95,7 @@
 
 #card3-section .c3-details dd {
   font-family: var(--font-body);
-  font-size: 4.5mm;
+  font-size: 4.2mm;
   font-weight: 400;
   line-height: 1.15;
   text-align: left;
