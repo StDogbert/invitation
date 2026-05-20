@@ -61,7 +61,7 @@
   text-align: center;
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 4.7mm;
+  font-size: 4.1mm;
   line-height: 1.45;
   letter-spacing: 0.01em;
   padding: 0 1mm;
@@ -82,7 +82,7 @@
 #card3-section .c3-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4.2mm;
+  font-size: 3.7mm;
   font-weight: 500;
   text-align: left;
   opacity: .85;
@@ -95,17 +95,18 @@
 
 #card3-section .c3-details dd {
   font-family: var(--font-body);
-  font-size: 4.2mm;
+  font-size: 3.7mm;
   font-weight: 400;
   line-height: 1.15;
   text-align: left;
+  white-space: nowrap;
 }
 
 #card3-section .c3-details dd em {
   font-style: italic;
   font-weight: 400;
   opacity: .85;
-  font-size: 3.4mm;
+  font-size: 2.9mm;
 }
 
 /* ── Stack mockup ─────────────────────────────────────────── */
