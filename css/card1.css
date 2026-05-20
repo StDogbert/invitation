@@ -4,15 +4,8 @@
    ============================================================ */
 
 #card1-section {
-  --card-bg:     #F7D4D8;
-  --card-ink:    #C42B34;
-  --card-radius: 6mm;
-  --trim-w:  110mm;
-  --trim-h:  155mm;
-  --bleed:   3mm;
-  --safe:    5mm;
-  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
-  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
+  --full-w: calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h: calc(var(--trim-h) + var(--bleed) * 2);
 }
 
 /* Frame dimensions */

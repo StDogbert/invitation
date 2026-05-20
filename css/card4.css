@@ -5,22 +5,8 @@
    ============================================================ */
 
 #card4-section {
-  --card-bg:  #F86D68;
-  --card-ink: #FFFFFF;
-  --trim-w:   80mm;
-  --trim-h:   105mm;
-  --bleed:    3mm;
-  --safe:     5mm;
-  --full-w:   calc(var(--trim-w) + var(--bleed) * 2);
-  --full-h:   calc(var(--trim-h) + var(--bleed) * 2);
-
-  /* Refs for full-stack view */
-  --c1-w:  110mm;  --c1-h:  155mm;
-  --c1-bg: #F7D4D8; --c1-ink: #C42B34;
-  --c2-w:  80mm;   --c2-h:  135mm;
-  --c2-bg: #F691A9; --c2-ink: #FFFFFF;
-  --c3-w:  80mm;   --c3-h:  120mm;
-  --c3-bg: #F4823A; --c3-ink: #FFFFFF;
+  --full-w: calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h: calc(var(--trim-h) + var(--bleed) * 2);
 }
 
 /* Frame dimensions */
@@ -88,29 +74,7 @@
   line-height: 0.9;
 }
 
-#card4-section .card-text .l-zhdem {
-  display: block;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 6mm;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-}
-
-#card4-section .card-text .l-vas {
-  display: block;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10mm;
-  line-height: 1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-  margin-top: 2mm;
-}
+/* .l-zhdem and .l-vas styles come from styles.css */
 
 /* ── Full stack mockup (all 4 cards) ─────────────────────── */
 #card4-section .stack-stage {
@@ -202,17 +166,7 @@
   flex-direction: column;
 }
 
-#card4-section .stack-c2 .c2-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1.05;
-  margin-top: 0;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+/* .c2-head styles come from styles.css */
 
 #card4-section .stack-c2 .c2-content {
   margin: auto 0;
@@ -289,16 +243,7 @@
   flex-direction: column;
 }
 
-#card4-section .stack-c3 .c3-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1.05;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+/* .c3-head styles come from styles.css */
 
 #card4-section .stack-c3 .c3-content {
   margin: auto 0;
@@ -381,27 +326,7 @@
   line-height: 0.9;
 }
 
-#card4-section .stack-c4 .c4-text .l-zhdem {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 4.5mm;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-}
-
-#card4-section .stack-c4 .c4-text .l-vas {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 7mm;
-  line-height: 1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-left: 0.18em;
-  margin-top: 1.5mm;
-}
+/* .l-zhdem and .l-vas styles come from styles.css */
 
 #card4-section .paperclip {
   right:  40mm;

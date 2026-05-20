@@ -4,21 +4,8 @@
    ============================================================ */
 
 #card3-section {
-  --card-bg:     #F4823A;
-  --card-ink:    #FFFFFF;
-  --card-radius: 6mm;
-  --trim-w:  80mm;
-  --trim-h:  120mm;
-  --bleed:   3mm;
-  --safe:    5mm;
-  --full-w:  calc(var(--trim-w) + var(--bleed) * 2);
-  --full-h:  calc(var(--trim-h) + var(--bleed) * 2);
-
-  /* Card refs for stack */
-  --c1-w:  110mm;  --c1-h:  155mm;
-  --c1-bg: #F7D4D8; --c1-ink: #C42B34;
-  --c2-w:  80mm;   --c2-h:  135mm;
-  --c2-bg: #F691A9; --c2-ink: #FFFFFF;
+  --full-w: calc(var(--trim-w) + var(--bleed) * 2);
+  --full-h: calc(var(--trim-h) + var(--bleed) * 2);
 }
 
 /* Frame dimensions */
@@ -33,20 +20,7 @@
   flex-direction: column;
 }
 
-/* ── Heading ──────────────────────────────────────────────── */
-#card3-section .c3-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-#card3-section .c3-head .line { display: block; }
+/* ── Heading — styles live in styles.css (.c3-head) ──────── */
 
 /* ── Centered content group ───────────────────────────────── */
 #card3-section .c3-content {
@@ -220,19 +194,7 @@
 
 #card3-section .stack-c2 .inner { position: absolute; inset: var(--safe); }
 
-#card3-section .stack-c2 .c2-head {
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 8mm;
-  line-height: 1.05;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-#card3-section .stack-c2 .c2-head span { display: block; }
+/* .c2-head styles come from styles.css — no override needed */
 
 /* Card 03 on top */
 #card3-section .stack-c3 {
