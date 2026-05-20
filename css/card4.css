@@ -92,11 +92,11 @@
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: 6.5mm;
+  font-size: 8.5mm;
   letter-spacing: 0.06em;
   line-height: 1;
   padding-left: 0.06em;
-  margin-bottom: 7mm;
+  margin-bottom: 8mm;
 }
 
 #card4-section .card-text .l-initials {
@@ -104,10 +104,10 @@
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 500;
-  font-size: 15mm;
-  letter-spacing: 0.1em;
+  font-size: 20mm;
+  letter-spacing: 0.06em;
   line-height: 1;
-  padding-left: 0.1em;
+  padding-left: 0.06em;
 }
 
 /* ── Full stack mockup (all 4 cards) ─────────────────────── */
@@ -366,21 +366,21 @@
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: 4mm;
+  font-size: 5.5mm;
   letter-spacing: 0.06em;
   line-height: 1;
   padding-left: 0.06em;
-  margin-bottom: 3.5mm;
+  margin-bottom: 5mm;
 }
 
 #card4-section .stack-c4 .c4-text .l-initials {
   display: block;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 9mm;
+  font-size: 13mm;
   line-height: 1;
-  letter-spacing: 0.1em;
-  padding-left: 0.1em;
+  letter-spacing: 0.06em;
+  padding-left: 0.06em;
 }
 
 #card4-section .paperclip {
