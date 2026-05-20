@@ -100,7 +100,8 @@
   function detailRows(details) {
     return details.map(d => {
       const em = d.descEm ? ` <em>${d.descEm}</em>` : '';
-      return `<dt>${d.term}</dt><dd>${d.desc}${em}</dd>`;
+      const cls = d.descClass ? ` class="${d.descClass}"` : '';
+      return `<dt>${d.term}</dt><dd${cls}>${d.desc}${em}</dd>`;
     }).join('');
   }
 

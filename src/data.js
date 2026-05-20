@@ -242,7 +242,7 @@ const INVITATION_DATA = {
       body: 'После регистрации продолжим праздник за общим столом — в тёплой и весёлой компании!',
       details: [
         { term: 'Время',    desc: '17:00' },
-        { term: 'Локация',  desc: 'Ресторан', descEm: 'Baf bulvar' },
+        { term: 'Локация',  desc: 'BAF BULVAR', descEm: 'ресторан', descClass: 'featured' },
         { term: 'Адрес',    desc: 'Bd. Traian, 25' },
       ],
 
