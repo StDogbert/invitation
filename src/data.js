@@ -20,7 +20,7 @@ const INVITATION_DATA = {
   // ── Global palette ─────────────────────────────────────────────
   palette: {
     tomato:  '#C42B34',
-    orange:  '#FC8A2D',
+    orange:  '#F4823A',
     blush:   '#DC4F7C',
     vanilla: '#FCE9AB',
     baby:    '#F7D4D8',
@@ -74,7 +74,7 @@ const INVITATION_DATA = {
 
       colors: [
         { hex: '#FCE9AB', name: 'Vanilla Custard',   role: 'фон'   },
-        { hex: '#FC8A2D', name: 'Princeton Orange',  role: 'текст' },
+        { hex: '#F4823A', name: 'Sunset Orange',      role: 'текст' },
         { hex: '#C42B34', name: 'Tomato Jam',        role: '',  muted: true },
         { hex: '#DC4F7C', name: 'Blush Rose',        role: '',  muted: true },
       ],
@@ -182,7 +182,7 @@ const INVITATION_DATA = {
       title: 'Карточка 03 · Ужин',
       subtitle: 'Праздничный ужин · Александр & Ксения',
 
-      cardBg:     '#FC8A2D',
+      cardBg:     '#F4823A',
       cardInk:    '#FFFFFF',
       cardRadius: '6mm',
 
@@ -213,7 +213,7 @@ const INVITATION_DATA = {
       ],
 
       colors: [
-        { hex: '#FC8A2D', name: 'Princeton Orange', role: 'фон'   },
+        { hex: '#F4823A', name: 'Sunset Orange',     role: 'фон'   },
         { hex: '#FFFFFF', name: 'White',            role: 'текст' },
       ],
 
