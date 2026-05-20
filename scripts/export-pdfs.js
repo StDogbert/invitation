@@ -7,7 +7,7 @@
  *
  * Usage:
  *   1. Start the local server:  python3 -m http.server 8743
- *   2. Run:                     node export-pdfs.js
+ *   2. Run:                     node scripts/export-pdfs.js
  *
  * Output:
  *   pdfs/card-01.pdf … card-04.pdf               artwork at with-bleed dimensions
@@ -87,7 +87,7 @@ async function exportSpecs(browser, outDir) {
 }
 
 async function main() {
-  const outDir = path.join(__dirname, 'pdfs');
+  const outDir = path.join(__dirname, '..', 'pdfs');
   fs.mkdirSync(outDir, { recursive: true });
 
   console.log('Launching browser…');
