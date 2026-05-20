@@ -1,11 +1,11 @@
 /* ============================================================
    card3.css — Card 03 specific styles (80×120mm dinner)
-   bg: #FC8A2D (princeton orange)  ink: #FCE9AB (vanilla)
+   bg: #FC8A2D (princeton orange)  ink: #FFFFFF (white)
    ============================================================ */
 
 #card3-section {
   --card-bg:     #FC8A2D;
-  --card-ink:    #FCE9AB;
+  --card-ink:    #FFFFFF;
   --card-radius: 6mm;
   --trim-w:  80mm;
   --trim-h:  120mm;
@@ -60,10 +60,10 @@
 #card3-section .c3-body {
   text-align: center;
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 4.5mm;
+  font-weight: 400;
+  font-size: 5mm;
   line-height: 1.45;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.01em;
   padding: 0 1mm;
 }
 
@@ -82,7 +82,7 @@
 #card3-section .c3-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4mm;
+  font-size: 4.5mm;
   font-weight: 500;
   text-align: left;
   opacity: .85;
@@ -95,7 +95,7 @@
 
 #card3-section .c3-details dd {
   font-family: var(--font-body);
-  font-size: 4mm;
+  font-size: 4.5mm;
   font-weight: 400;
   line-height: 1.15;
   text-align: left;

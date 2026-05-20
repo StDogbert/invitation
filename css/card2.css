@@ -1,11 +1,11 @@
 /* ============================================================
    card2.css — Card 02 specific styles (80×135mm registration)
-   bg: #F691A9 (bubblegum)  ink: #FCE9AB (vanilla)
+   bg: #F691A9 (bubblegum)  ink: #FFFFFF (white)
    ============================================================ */
 
 #card2-section {
   --card-bg:     #F691A9;
-  --card-ink:    #FCE9AB;
+  --card-ink:    #FFFFFF;
   --card-radius: 6mm;
   --trim-w:  80mm;
   --trim-h:  135mm;
@@ -60,10 +60,10 @@
 #card2-section .c2-body {
   text-align: center;
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 4.5mm;
-  line-height: 1.4;
-  letter-spacing: 0.005em;
+  font-weight: 400;
+  font-size: 5mm;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
   padding: 0 1mm;
 }
 
@@ -82,7 +82,7 @@
 #card2-section .c2-details dt {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 4mm;
+  font-size: 4.5mm;
   font-weight: 500;
   text-align: left;
   opacity: .85;
@@ -95,7 +95,7 @@
 
 #card2-section .c2-details dd {
   font-family: var(--font-body);
-  font-size: 4mm;
+  font-size: 4.5mm;
   font-weight: 400;
   line-height: 1.15;
   text-align: left;

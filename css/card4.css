@@ -1,12 +1,12 @@
 /* ============================================================
    card4.css — Card 04 specific styles (80×105mm arch "ждем вас")
-   bg: #F86D68 (coral/salmon)  ink: #FCE9AB (vanilla)
+   bg: #F86D68 (coral/salmon)  ink: #FFFFFF (white)
    Shape: arch/medallion (half-circle top, straight sides+bottom)
    ============================================================ */
 
 #card4-section {
   --card-bg:  #F86D68;
-  --card-ink: #FCE9AB;
+  --card-ink: #FFFFFF;
   --trim-w:   80mm;
   --trim-h:   105mm;
   --bleed:    3mm;
